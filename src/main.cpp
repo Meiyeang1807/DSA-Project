@@ -33,7 +33,8 @@ int main()
         cout << "4. Update Patient\n";
         cout << "5. Display All Patients\n";
         cout << "6. Pop Patient\n";
-        cout << "7. Exit\n";
+        cout << "7. Sort Patients by Name\n";
+        cout << "8. Exit\n";
         cout << "=====================\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -120,7 +121,12 @@ int main()
             }
             break;
 
-        case 7: // Exit
+        case 7: // Sort Patients by Name
+            patientRecord.sortByName(); 
+            cout << "Patients sorted by name successfully.\n";
+            break;
+
+        case 8: // Exit
             cout << "Exiting the system. Thank you!\n";
             break;
 
@@ -128,7 +134,7 @@ int main()
             cout << "Invalid choice. Please try again.\n";
             break;
         }
-    } while (choice != 7);
+    } while (choice != 8);
 
     return 0;
 }
