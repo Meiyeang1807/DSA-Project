@@ -25,6 +25,7 @@ public:
     Patient *traverseLastNode();
     bool underflow();
     bool overflow();
+    void sortByName();
 };
 
 #endif
