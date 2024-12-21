@@ -280,3 +280,47 @@ Patient *Patient_Record::traverseLastNode()
     }
     return current;
 }
+
+void Patient_Record::sortByName()
+{
+    bool swapped;
+    Patient *current, *nextNode, *lastSorted = nullptr;
+    do
+    {
+        swapped = false;
+        current = top;
+
+        while (current != nullptr && current->getNext() != lastSorted)
+        {
+            nextNode = current->getNext();
+            if (current->getName() > nextNode->getName())
+            {
+                int tempId = current->getId();
+                string tempName = current->getName();
+                string tempDescription = current->getDescription();
+                string tempCategory = current->getCategory();
+                tm tempTimestamp = current->getTimestamp();
+                
+                current->setId(nextNode->getId());
+                current->setName(nextNode->getName());
+                current->setDescription(nextNode->getDescription());
+                current->setCategory(nextNode->getCategory());
+                current->setTimestamp(nextNode->getTimestamp());
+
+                nextNode->setId(tempId);
+                nextNode->setName(tempName);
+                nextNode->setDescription(tempDescription);
+                nextNode->setCategory(tempCategory);
+                nextNode->setTimestamp(tempTimestamp);
+                
+                swapped = true;
+                
+                cout << "Swapped: " << current->getName() << " <-> " << nextNode->getName() << endl;
+            }
+            current = current->getNext();
+        }
+        lastSorted = current;
+    } while (swapped);
+
+    cout << "Patients sorted by name successfully." << endl;
+}
