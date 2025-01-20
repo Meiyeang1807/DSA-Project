@@ -85,9 +85,9 @@ int main()
 
     do
     {
-        cout << "\n=====================\n";
-        cout << " Patient Record System \n";
-        cout << "=====================\n";
+        cout << "\n===================================\n";
+        cout << "       Patient Record System \n";
+        cout << "===================================\n";
         cout << "1. Add Patient\n";
         cout << "2. Search Patient by ID\n";
         cout << "3. Search Patient by Name/Category\n";
@@ -99,7 +99,7 @@ int main()
         cout << "9. Sort Patients by Name\n";
         cout << "10. Emergency Patient\n";
         cout << "11. Exit\n";
-        cout << "=====================\n";
+        cout << "===================================\n";
         cout << "Enter your choice: ";
         cin >> choice;
         cin.clear();
@@ -202,12 +202,13 @@ int main()
             int emergencyChoice;
             do
             {
-                cout << "\n=== Emergency ===\n";
+                cout << endl;
+                cout << "============= Emergency ===========\n";
                 cout << "1. Add Emergency Patient\n";
                 cout << "2. Remove Highest Priority Patient\n";
                 cout << "3. View Emergency Queue\n";
                 cout << "4. Back to Main Menu\n";
-                cout << "============================\n";
+                cout << "===================================\n";
                 cout << "Enter your choice: ";
                 cin >> emergencyChoice;
                 cin.clear();
