@@ -15,7 +15,7 @@ Patient_Record::Patient_Record()
     userId = 0;
 }
 // if stack is empty
-bool Patient_Record::underflow()
+bool Patient_Record::underflow() const
 {
     if (totalPatient == 0)
     {
@@ -226,19 +226,32 @@ void Patient_Record::display()
 
     current = top;
 
-    cout << endl
-        << "Patients in Record:" << endl;
-    cout << "===================" << endl;
-    for (int i = 0; i < totalPatient; i++)
-    {
-        cout << "ID: " << current->getId() << endl;
-        cout << "Name: " << current->getName() << endl;
-        cout << "Description: " << current->getDescription() << endl;
-        cout << "Category: " << current->getCategory() << endl;
-        cout << "Timestamp: " << current->timestampToString() << endl;
-        cout << "-------------------";
-        cout << endl;
-        current = current->getNext();
+     cout << endl
+     << "Patients in Record:" << endl;
+     cout << "==============================================================================================================" << endl;
+
+     cout << left
+         << setw(10) << "ID"
+         << setw(20) << "Name"
+         << setw(40) << "Description"
+         << setw(20) << "Category"
+         << setw(25) << "Timestamp"
+         << endl;
+
+    cout << "==============================================================================================================" << endl;
+
+ for (int i = 0; i < totalPatient; i++)
+ {
+     cout << left
+         << setw(10) << current->getId()
+         << setw(20) << current->getName()
+         << setw(40) << current->getDescription()
+         << setw(20) << current->getCategory()
+         << setw(25) << current->timestampToString()
+         << endl;
+     current = current->getNext();
+ }
+cout << "==============================================================================================================" << endl;
     }
 }
 // display by selected id
